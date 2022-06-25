@@ -1,0 +1,281 @@
+/* Font Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+
+:root {
+
+    
+    /* Background Color Container */
+    --mainColor: #BDC3C7;
+
+    /* Font Color */
+    --secondColor: #2C3E50;
+    
+    
+    /* Reguler Color */
+    --thirdColor: #8D8DAA;
+    
+    /* Forms Color */
+    --fourthColor:#DFDFDE;
+    
+    /* Background Color */
+    --fifthColor: #F7F5F2;
+
+
+    /* Pseudo-class color */
+    --sixthColor: #F56D91;
+}
+
+* {
+    margin: 0;
+}
+
+/* Temporary research */
+/* .bg_main {
+    position: relative;
+    background-color: var(--fifthColor);
+    height: 100vh;
+    width: auto;
+} */
+body {
+    position: static;
+    background-color: var(--thirdColor);
+    height: 100vh;
+}
+
+.container {
+    font-family:'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--secondColor);
+}
+
+
+.container {
+    position: absolute;
+    background-color: var(--mainColor);
+    height: auto;
+    width: auto;
+    right: 50px;
+    left: 50px;
+    top: 5vh;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.nav {
+    position: relative;
+    width: 100%;
+
+}
+
+/* Navbar Section */
+.bg_navbar {
+    border-bottom: 3px solid var(--secondColor);
+}
+
+.navbar h2 {
+    color: var(--secondColor);
+    font-family: 'Fascinate', cursive;
+    margin-top: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+
+.item_list {
+    list-style: none;
+    margin-top: auto;
+    margin-right: 10px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.item_list li:hover {
+    color: var(--secondColor);
+    font-weight: 500;
+}
+.item_list li a {
+    margin: auto 4px;
+}
+
+/* Sub-Navbar Section */
+.sub_navbar {
+    margin: 20px auto;
+    margin-left: 0;
+}
+
+.bg_sub_navbar {
+    position: relative;
+    background-color: var(--thirdColor);
+    height: auto;
+    width: max-content;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.form {
+    display: flex;
+    column-gap: 6px;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;    
+}
+
+/* div.form .input_text {
+    height: 1.5rem;
+    border-style: none;
+    border-radius: 4px;
+    width: 100px;
+} */
+
+div.form .input_text {
+    border-radius: 4px;
+}
+
+/*Junk scripts*/
+/* div.form .select { 
+    height: 1.5rem;
+    border-style: none;
+    border-radius: 4px;
+    width: 100px;
+} */
+
+div.form .select {
+    border-radius: 4px;
+}
+
+/* Font style sub-navbar */
+.input_text, .select, .select > option, .form .button {
+    font-family: 'Poppins' sans-serif;
+    font-weight: 500;
+}
+
+/*Junk scripts*/
+/* div.form .button {
+    width: 100px;
+    background-color: var(--fifthColor);
+    height: 1.5rem;
+    border-radius: 4px;
+    border-style: none;
+    cursor: pointer;
+} */
+
+div.form .button {
+    border-radius: 4px;
+}
+
+.content {
+    position: relative;
+    background-color: var(--fourthColor);
+    height: auto;
+    width: auto;
+    border-radius: 4px;
+    padding: 50px;
+}
+
+.footer {
+    position: relative;
+    border-top: 3px solid var(--secondColor);
+    margin: 20px auto;
+}
+
+.sub_footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin: auto 4px;
+    justify-content: space-between;
+}
+
+.signatures {
+    margin: auto 0;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.contacts {
+    display: flex;
+    column-gap: 8px;
+}
+
+/* Responsive website */
+
+/* @media only screen and (max-width: 1280px) {
+
+} */
+
+/* @media only screen and (max-width: 1024px) {
+
+} */
+
+/* @media only screen and (max-width: 768px) {
+
+} */
+
+@media only screen and (max-width: 480px) {
+
+    .container {
+        width: auto;
+    }
+
+    .navbar {
+        width: auto;
+    }
+
+    .logo {
+        width: auto;
+    }
+    
+    .logo img {
+        width: 28px;
+        margin-bottom: 12px;
+    } 
+    
+    .logo h2 {
+        font-size: 12px;
+    }
+
+    .item_list {
+        width: auto;
+        font-size: 12px;
+    }
+
+    .sub_navbar, .bg_sub_navbar {
+        width: auto;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+        align-items: center;
+        align-content: center;
+        width: auto;
+    }
+
+    .form button, .form input, .form select, .form label {
+        font-size: 12px;
+    }
+
+    .signatures {
+        font-size: 12px;
+    }
+
+    .contacts a {
+        height: max-content;
+        width: max-content;
+    }
+
+}

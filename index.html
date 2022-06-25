@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="MUH. AHSAN">
+    <meta name="description" content="non-ton">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>non-ton</title>
+
+    <link rel="icon" type="image/png"  href="./assets/images/non-ton-favicon.png">
+
+    <!-- CSS External -->
+    <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/css/uikit.min.css" />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+</head>
+<body>
+    
+    <!-- Temporary research -->
+    <!-- <div class="bg_main"> </div> -->
+        
+    <div class="container">
+        <!-- ===Navbar=== -->
+        <nav class="nav" uk-parallax="target: #test-filter; start: 100%; end: 100%; blur: 0,10;">
+            
+            <section class="bg_navbar">
+                <div class="navbar">
+                    <div class="logo">
+                        <a class="uk-link-reset"><img src="./assets/./images/non-ton-logo.png" alt="non-ton" width="64px" height="64px"></a>
+                        <h2>non-ton</h2>
+                    </div>
+                    
+                    <ul class="item_list">
+                        <li class="uk-link-reset"><a href="#modalAbout" uk-toggle uk-icon="icon:info"></a>Tentang</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="sub_navbar">
+                <div class="bg_sub_navbar">
+                    <form action="">
+                        <div class="form">
+                            
+                            <label for="">Filter:</label>
+
+                            <input style="background-color: #F7F5F2"; class="uk-input uk-form-width-small uk-form-small input_text" id="" type="text" placeholder="Input Teks">
+
+                            <select style="background-color: #F7F5F2"; name="" id="" class="uk-select uk-form-width-small uk-form-small select">
+                                <option value="">Pencarian</option>
+                                <option value="1">Website</option>
+                                <option value="2">Tulisan</option>
+                                <option value="3">Podcast</option>
+                                <option value="4">Video</option>
+                            </select>
+
+                            <button style="background-color: #F7F5F2" class="uk-button uk-button-width-small uk-button-small button" type="button" onclick="UIkit.notification({message: '<span uk-icon=\'icon: happy\'></span> under maintenance !'})">Button</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+        </nav>
+
+        <!-- ===Modal=== -->
+        <div id="modalAbout" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <h2 class="uk-modal-title">non-ton</h2>
+                <p> non-ton menyediakan akses berbagai konten IT dari berbagai konten kreator di tanah air yang dapat membantu temton (teman non-ton).</p>
+            </div>                
+        </div>
+
+        <!-- === Main === -->
+        <main>
+            <section>
+                <div class="content">
+
+                    <!-- Temporarily script -->
+                    
+                    <!-- <article class="uk-article">
+                        <h1 class="uk-article-title uk-heading-small uk-heading-bullet">Kamu</h1>
+                        <p class="uk-article-meta">Written by <a href="#">Super User</a> on 12 April 2012. Posted in <a href="#">Blog</a></p>
+                        <p>Itu dia yang selalu mengeluah dengan keadaan yang terpuruk</p>
+                    </article> -->
+
+                    <article class="uk-article article" id="article">
+                        <!-- <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading"> </h1>
+                        <p class="uk-article-meta" id="metaArticle"></p>
+                        <p id="pragraph"></p>    -->
+                    </article>
+
+                </div>   
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer">
+                <div class="sub_footer">
+                    <div class="signatures">
+                        <p>&#169; 2022 non-ton</p>
+                    </div>
+                    <div class="contacts" uk-scrollspy="target: > a; cls: uk-animation-fade; delay: 1000" uk-lightbox>
+                        <a href="https://github.com/muhahsanarifin" class="uk-icon-button" uk-icon="github" data-type="iframe"></a>
+                        <a href="https://www.linkedin.com/in/muhahsan" class="uk-icon-button" uk-icon="linkedin" data-type="iframe"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    
+    <!--JavaScript Eksternal-->
+    <script type="text/javascript" src="./assets/script.js"></script>
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/js/uikit-icons.min.js"></script>
+
+</body>
+</html>

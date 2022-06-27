@@ -33,39 +33,45 @@ fetch(BASE_API_URL)
             "beforeend",
             `
             <article class="uk-article article" id="article">
-                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading"> ${cont.data[0].title} </h1>
+                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading" style="font-family:'Poppins'">${cont.data[0].title}</h1>
                 <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[0].contributor}</p>
-                <p id="pragraph"><a href="${cont.data[0].url}">Watch it</a> </p>   
+                <p id="pragraph"><a href="${cont.data[0].url}" target="_blank">Watch it</a></p>   
             </article>
 
             <article class="uk-article article" id="article">
-                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading"> ${cont.data[1].title} </h1>
+                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading" style="font-family:'Poppins'">${cont.data[1].title}</h1>
                 <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[1].contributor}</p>
-                <p id="pragraph"><a href="${cont.data[1].url}">Watch it</a> </p>   
+                <p id="pragraph"><a href="${cont.data[1].url}" target="_blank">Watch it</a></p>   
             </article>
 
             <article class="uk-article article" id="article">
-                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading"> ${cont.data[2].title} </h1>
+                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading" style="font-family:'Poppins'">${cont.data[2].title}</h1>
                 <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[2].contributor}</p>
-                <p id="pragraph"><a href="${cont.data[2].url}">Watch it</a> </p>   
+                <p id="pragraph"><a href="${cont.data[2].url}" target="_blank">Watch it</a></p>   
             </article>
 
             <article class="uk-article article" id="article">
-                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading"> ${cont.data[3].title} </h1>
+                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading" style="font-family:'Poppins'">${cont.data[3].title}</h1>
                 <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[3].contributor}</p>
-                <p id="pragraph"><a href="${cont.data[3].url}">Watch it</a> </p>   
+                <p id="pragraph"><a href="${cont.data[3].url}" target="_blank">Watch it</a></p>   
             </article>
 
             <article class="uk-article article" id="article">
-                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading"> ${cont.data[4].title} </h1>
+                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading" style="font-family:'Poppins'">${cont.data[4].title}</h1>
                 <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[4].contributor}</p>
-                <p id="pragraph"><a href="${cont.data[4].url}">Watch it</a> </p>   
+                <p id="pragraph"><a href="${cont.data[4].url}" target="_blank">Watch it</a></p>   
             </article>
 
             <article class="uk-article article" id="article">
-                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading"> ${cont.data[5].title} </h1>
+                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading" style="font-family:'Poppins'">${cont.data[5].title}</h1>
                 <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[5].contributor}</p>
-                <p id="pragraph"><a href="${cont.data[5].url}">Watch it</a> </p>   
+                <p id="pragraph"><a href="${cont.data[5].url}" target="_blank">Watch it</a></p>   
+            </article>
+
+            <article class="uk-article article" id="article">
+                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading" style="font-family:'Poppins'">${cont.data[6].title}</h1>
+                <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[6].contributor}</p>
+                <p id="pragraph"><a href="${cont.data[6].url}" target="_blank">Watch it</a></p>   
             </article>
             `
         ); 

@@ -6,7 +6,7 @@ const BASE_API_URL = `https://api.pulo.dev/v1/contents`;
 
 // const pragraph = document.getElementById("pragraph");
 
-const article = document.querySelector("article.article");
+const article = document.querySelector(".content");
 
 // Init API using fetch()
 fetch(BASE_API_URL)
@@ -18,7 +18,7 @@ fetch(BASE_API_URL)
         } 
     })
     .then((cont) => {
-        console.log(cont);
+        // console.log(cont);
 
         // const output = '';
         // cont.forEach( function(out) {
@@ -31,40 +31,42 @@ fetch(BASE_API_URL)
         // Temporarily scripts
         article.insertAdjacentHTML(
             "beforeend",
-            `<h4>${cont.data[0].title}</h4>
-            <a onclick("${cont.data[0].url}")>Watch it</a>
-            <p>Created by ${cont.data[0].contributor}</p>
-            
-            
-            <br>
-            
-            <h4>${cont.data[1].title}</h4>
-            <a onclick("${cont.data[1].url}")>Watch it</a>
-            <p>Created by ${cont.data[1].contributor}</p>
+            `
+            <article class="uk-article article" id="article">
+                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading"> ${cont.data[0].title} </h1>
+                <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[0].contributor}</p>
+                <p id="pragraph"><a href="${cont.data[0].url}">Watch it</a> </p>   
+            </article>
 
-            <br>
+            <article class="uk-article article" id="article">
+                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading"> ${cont.data[1].title} </h1>
+                <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[1].contributor}</p>
+                <p id="pragraph"><a href="${cont.data[1].url}">Watch it</a> </p>   
+            </article>
 
-            <h4>${cont.data[2].title}</h4>
-            <a onclick("${cont.data[2].url}")>Watch it</a>
-            <p>Created by ${cont.data[2].contributor}</p>
+            <article class="uk-article article" id="article">
+                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading"> ${cont.data[2].title} </h1>
+                <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[2].contributor}</p>
+                <p id="pragraph"><a href="${cont.data[2].url}">Watch it</a> </p>   
+            </article>
 
-            <br>
+            <article class="uk-article article" id="article">
+                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading"> ${cont.data[3].title} </h1>
+                <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[3].contributor}</p>
+                <p id="pragraph"><a href="${cont.data[3].url}">Watch it</a> </p>   
+            </article>
 
-            <h4>${cont.data[3].title}</h4>
-            <a onclick("${cont.data[3].url}")>Watch it</a>
-            <p>Created by ${cont.data[3].contributor}</p>
+            <article class="uk-article article" id="article">
+                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading"> ${cont.data[4].title} </h1>
+                <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[4].contributor}</p>
+                <p id="pragraph"><a href="${cont.data[4].url}">Watch it</a> </p>   
+            </article>
 
-            <br>
-
-            <h4>${cont.data[4].title}</h4>
-            <a onclick("${cont.data[3].url}")>Watch it</a>
-            <p>Created by ${cont.data[4].contributor}</p>
-            
-            <br>
-
-            <h4>${cont.data[5].title}</h4> 
-            <a onclick("${cont.data[5].url}")>Watch it</a>
-            <p>Created by ${cont.data[5].contributor}</p>
+            <article class="uk-article article" id="article">
+                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading"> ${cont.data[5].title} </h1>
+                <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[5].contributor}</p>
+                <p id="pragraph"><a href="${cont.data[5].url}">Watch it</a> </p>   
+            </article>
             `
         ); 
     })

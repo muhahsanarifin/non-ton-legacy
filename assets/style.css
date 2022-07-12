@@ -1,135 +1,124 @@
 /* Font Styles */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fascinate&display=swap");
 
 :root {
+  /* Background Color Container */
+  --mainColor: #bdc3c7;
 
-    
-    /* Background Color Container */
-    --mainColor: #BDC3C7;
+  /* Font Color */
+  --secondColor: #2c3e50;
 
-    /* Font Color */
-    --secondColor: #2C3E50;
-    
-    
-    /* Reguler Color */
-    --thirdColor: #8D8DAA;
-    
-    /* Forms Color */
-    --fourthColor:#DFDFDE;
-    
-    /* Background Color */
-    --fifthColor: #F7F5F2;
+  /* Reguler Color */
+  --thirdColor: #8d8daa;
 
+  /* Forms Color */
+  --fourthColor: #dfdfde;
 
-    /* Pseudo-class color */
-    --sixthColor: #F56D91;
+  /* Background Color */
+  --fifthColor: #f7f5f2;
+
+  /* Pseudo-class color */
+  --sixthColor: #f56d91;
 }
 
 * {
-    margin: 0;
+  margin: 0;
 }
 
-/* Temporary research */
-/* .bg_main {
-    position: relative;
-    background-color: var(--fifthColor);
-    height: 100vh;
-    width: auto;
-} */
 body {
-    position: static;
-    background-color: var(--thirdColor);
-    height: 100vh;
+  background-color: var(--thirdColor);
+  padding: 2rem;
 }
 
 .container {
-    font-family:'Poppins', sans-serif;
-    font-weight: 400;
-    color: var(--secondColor);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: var(--secondColor);
 }
 
-
 .container {
-    position: absolute;
-    background-color: var(--mainColor);
-    height: auto;
-    width: auto;
-    right: 50px;
-    left: 50px;
-    top: 5vh;
-    border-radius: 4px;
-    padding: 8px;
+  position: relative;
+  background-color: var(--mainColor);
+  min-height: 100vh;
+  width: auto;
+  border-radius: 4px;
+  padding: 8px;
 }
 
 .nav {
-    position: relative;
-    width: 100%;
-
+  position: relative;
+  width: 100%;
 }
 
-/* Navbar Section */
+/* || Navbar Section */
 .bg_navbar {
-    border-bottom: 3px solid var(--secondColor);
+  border-bottom: 3px solid var(--secondColor);
 }
 
 .navbar h2 {
-    color: var(--secondColor);
-    font-family: 'Fascinate', cursive;
-    margin-top: auto;
+  color: var(--secondColor);
+  font-family: "Fascinate", cursive;
+  margin-top: auto;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
-
 .item_list {
-    list-style: none;
-    margin-top: auto;
-    margin-right: 10px;
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer;
+  /* border: 2px solid var(--sixthColor); */
+  list-style: none;
+  margin-top: auto;
+  margin-right: 10px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+
+.item_list li {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
 }
 
 .item_list li:hover {
-    color: var(--secondColor);
-    font-weight: 500;
+  color: var(--secondColor);
+  font-weight: 500;
 }
 .item_list li a {
-    margin: auto 4px;
+  margin: auto 4px;
 }
 
-/* Sub-Navbar Section */
+/* || Sub-Navbar Section */
 .sub_navbar {
-    margin: 20px auto;
-    margin-left: 0;
+  margin: 20px auto;
+  margin-left: 0;
 }
 
 .bg_sub_navbar {
-    position: relative;
-    background-color: var(--thirdColor);
-    height: auto;
-    width: max-content;
-    border-radius: 4px;
-    padding: 8px;
+  position: relative;
+  background-color: var(--thirdColor);
+  height: auto;
+  width: max-content;
+  border-radius: 4px;
+  padding: 8px;
 }
 
 .form {
-    display: flex;
-    column-gap: 6px;
-    align-items: center;
-    align-content: center;
-    flex-wrap: wrap;    
+  display: flex;
+  column-gap: 6px;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
 /* div.form .input_text {
@@ -139,8 +128,8 @@ body {
     width: 100px;
 } */
 
-div.form .input_text {
-    border-radius: 4px;
+div.form input[type="text"] {
+  border-radius: 4px;
 }
 
 /*Junk scripts*/
@@ -152,13 +141,16 @@ div.form .input_text {
 } */
 
 div.form .select {
-    border-radius: 4px;
+  border-radius: 4px;
 }
 
-/* Font style sub-navbar */
-.input_text, .select, .select > option, .form .button {
-    font-family: 'Poppins' sans-serif;
-    font-weight: 500;
+/* || Font style sub-navbar */
+input[type="text"],
+.select,
+.select > option,
+.form .button {
+  font-family: "Poppins" sans-serif;
+  font-weight: 500;
 }
 
 /*Junk scripts*/
@@ -172,50 +164,73 @@ div.form .select {
 } */
 
 div.form .button {
-    border-radius: 4px;
+  border-radius: 4px;
 }
 
 .content {
-    position: relative;
-    background-color: var(--fourthColor);
-    height: auto;
-    width: auto;
-    border-radius: 4px;
-    padding: 50px;
+  /* border: 2px solid var(--sixthColor); */
+  position: relative;
+  background-color: var(--fourthColor);
+  height: auto;
+  width: auto;
+  border-radius: 4px;
+  padding: 3rem;
 }
 
-#article h1, #article p {
-    margin: 1rem auto;
-} 
+.article {
+  border-bottom: 1px solid var(--mainColor);
+
+}
+
+#article h1,
+#article p {
+  margin: 1rem auto;
+}
 
 #article h1 {
-    font-size: 18px;
+  border-left: 0.4rem solid var(--secondColor);
+  font-size: 18px;
+  padding: 0 0.4rem;
+  font-weight: 500;
+}
+
+.pragraph a {
+  color: var(--secondColor);
+  font-weight: 500;
+}
+
+.pragraph a:hover {
+  color: var(--thirdColor);
+  text-decoration: none;
 }
 
 .footer {
-    position: relative;
-    border-top: 3px solid var(--secondColor);
-    margin: 20px auto;
+  position: relative;
+  border-top: 3px solid var(--secondColor);
+  margin: 20px auto;
 }
 
 .sub_footer {
-    position: relative;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    margin: auto 4px;
-    justify-content: space-between;
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin: auto 4px;
+  justify-content: space-between;
 }
 
 .signatures {
-    margin: auto 0;
-    margin-top: 20px;
-    font-weight: 500;
+  margin: auto 0;
+  margin-top: 20px;
+  font-weight: 500;
 }
 
 .contacts {
-    display: flex;
-    column-gap: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+
 }
 
 /* Responsive website */
@@ -234,56 +249,86 @@ div.form .button {
 
 @media only screen and (max-width: 480px) {
 
-    .container {
-        width: auto;
-    }
+  body {
+    padding: 0;
+  }
 
-    .navbar {
-        width: auto;
-    }
+  .container {
+    width: auto;
+    border-radius: 0;
+  }
 
-    .logo {
-        width: auto;
-    }
-    
-    .logo img {
-        width: 28px;
-        margin-bottom: 12px;
-    } 
-    
-    .logo h2 {
-        font-size: 12px;
-    }
+  .navbar {
+    width: auto;
+  }
 
-    .item_list {
-        width: auto;
-        font-size: 12px;
-    }
+  .logo {
+    width: auto;
+  }
 
-    .sub_navbar, .bg_sub_navbar {
-        width: auto;
-    }
+  .logo img {
+    width: 28px;
+    margin-bottom: 12px;
+  }
 
-    .form {
-        display: flex;
-        flex-direction: column;
-        row-gap: 4px;
-        align-items: center;
-        align-content: center;
-        width: auto;
-    }
+  .logo h2 {
+    font-size: 12px;
+  }
 
-    .form button, .form input, .form select, .form label {
-        font-size: 12px;
-    }
+  .item_list {
+    width: auto;
+    font-size: 12px;
+  }
 
-    .signatures {
-        font-size: 12px;
-    }
+  .item_list p {
+    display: none;
+  }
 
-    .contacts a {
-        height: max-content;
-        width: max-content;
-    }
+  .sub_navbar,
+  .bg_sub_navbar {
+    width: auto;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    align-items: center;
+    align-content: center;
+    width: auto;
+  }
+
+  .form button,
+  .form input,
+  .form select,
+  .form label {
+    font-size: 12px;
+  }
+
+  .signatures {
+    font-size: 12px;
+  }
+
+  .contacts a {
+    height: 24px;
+    width: 24px;
+  }
+  
+  .content {
+    padding: 0.5rem;
+  }
+
+  #article h1 {
+    font-size: 12px;
+    padding: 0 0.4rem;
+  }
+
+  #metaArticle {
+    font-size: 10px;
+  }
+
+  .pragraph a {
+    font-size: 12px;
+  }
 
 }

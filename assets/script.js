@@ -10,69 +10,28 @@ const article = document.querySelector(".content");
 
 // Init API using fetch()
 fetch(BASE_API_URL)
-    .then ((res) => {
-        if (res.status === 200) {
-            return res.json();
-        } else {
-            console.log(`HTTP error status: ${res.status}`);
-        } 
-    })
-    .then((cont) => {
-        // console.log(cont);
+  .then((res) => {
+    if (res.status === 200) {
+      return res.json();
+    } else {
+      console.log(`HTTP error status: ${res.status}`);
+    }
+  })
+  .then((cont) => {
+    // console.log(cont);
 
-        // const output = '';
-        // cont.forEach( function(out) {
-        //     output = output +
-        //     `${out.data[0].title}`;
-        // })
-        // heading.innerHTML = output;
+    let data = '';
 
-        
-        // Temporarily scripts
-        article.insertAdjacentHTML(
-            "beforeend",
-            `
-            <article class="uk-article article" id="article">
-                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading" style="font-family:'Poppins'">${cont.data[0].title}</h1>
-                <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[0].contributor}</p>
-                <p id="pragraph"><a href="${cont.data[0].url}" target="_blank">Watch it</a></p>   
-            </article>
+    for (let index of cont.data) {
+      data += `
+      <article class="uk-article article" id="article">
+        <h1 class="uk-artilce-title uk-heading-small heading" id="heading" style="font-family:'Poppins'">${index.title}</h1>
+        <p class="uk-article-meta" id="metaArticle">${index.contributor}</p>
+        <p class="pragraph"><a href="${index.url}" target="_blank">Watch it</a></p>   
+      </article>
+      `;
+    }
 
-            <article class="uk-article article" id="article">
-                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading" style="font-family:'Poppins'">${cont.data[1].title}</h1>
-                <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[1].contributor}</p>
-                <p id="pragraph"><a href="${cont.data[1].url}" target="_blank">Watch it</a></p>   
-            </article>
+    article.innerHTML = data;
 
-            <article class="uk-article article" id="article">
-                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading" style="font-family:'Poppins'">${cont.data[2].title}</h1>
-                <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[2].contributor}</p>
-                <p id="pragraph"><a href="${cont.data[2].url}" target="_blank">Watch it</a></p>   
-            </article>
-
-            <article class="uk-article article" id="article">
-                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading" style="font-family:'Poppins'">${cont.data[3].title}</h1>
-                <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[3].contributor}</p>
-                <p id="pragraph"><a href="${cont.data[3].url}" target="_blank">Watch it</a></p>   
-            </article>
-
-            <article class="uk-article article" id="article">
-                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading" style="font-family:'Poppins'">${cont.data[4].title}</h1>
-                <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[4].contributor}</p>
-                <p id="pragraph"><a href="${cont.data[4].url}" target="_blank">Watch it</a></p>   
-            </article>
-
-            <article class="uk-article article" id="article">
-                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading" style="font-family:'Poppins'">${cont.data[5].title}</h1>
-                <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[5].contributor}</p>
-                <p id="pragraph"><a href="${cont.data[5].url}" target="_blank">Watch it</a></p>   
-            </article>
-
-            <article class="uk-article article" id="article">
-                <h1 class="uk-artilce-title uk-heading-small uk-heading-bullet" id="heading" style="font-family:'Poppins'">${cont.data[6].title}</h1>
-                <p class="uk-article-meta" id="metaArticle">Created by ${cont.data[6].contributor}</p>
-                <p id="pragraph"><a href="${cont.data[6].url}" target="_blank">Watch it</a></p>   
-            </article>
-            `
-        ); 
-    })
+  });

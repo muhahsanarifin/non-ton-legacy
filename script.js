@@ -28,6 +28,6 @@ fetch("https://api.pulo.dev/v1/contents")
     article.innerHTML = data;
   });
 
-	function hideLoader() {
-		loader.style.display = "none";
-	}
+function hideLoader() {
+	loader.style.display = "none";
+}

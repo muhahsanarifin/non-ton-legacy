@@ -116,6 +116,10 @@ body {
   justify-content: center;
 }
 
+.form label {
+	display: none;
+}
+
 .form input[type="text"], .form select.select {
   border-radius: 4px;
 }

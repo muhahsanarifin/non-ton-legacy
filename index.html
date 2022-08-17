@@ -11,12 +11,11 @@
     <link rel="icon" type="image/png" href="./assets/images/non-ton-favicon.png"/>
 
     <!-- CSS External -->
-    <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
 
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/css/uikit.min.css"/>
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> -->
   </head>
   <body>
     <div class="container">
@@ -37,19 +36,17 @@
         </section>
         <section class="sub_navbar">
           <div class="bg_sub_navbar">
-            <form action="">
-              <div class="form">
+            <form action="" class="form">
                 <label for="">Filter</label>
-                <input style="background-color: #f7f5f2"; class="uk-input uk-form-width-small uk-form-small" id="" type="text" placeholder="Input Teks"/>
-                <select style="background-color: #f7f5f2"; name="" id="" class="uk-select uk-form-width-small uk-form-small select">
+                <input class="uk-input uk-form-width-small uk-form-small" id="" type="text" placeholder="Input Teks"/>
+                <select class="uk-select uk-form-width-small uk-form-small select" id="" >
                   <option value="">Semua Media</option>
                   <option value="1">Website</option>
                   <option value="2">Tulisan</option>
                   <option value="3">Podcast</option>
                   <option value="4">Video</option>
                 </select>
-                <button style="background-color: #f7f5f2" class="uk-button uk-button-width-small uk-button-small button" type="button" onclick="UIkit.notification({message: '<span uk-icon=\'icon: happy\'></span> under maintenance !'})"> Button</button>
-              </div>
+                <button class="uk-button uk-button-width-small uk-button-small button" type="button" onclick="UIkit.notification({message: '<span uk-icon=\'icon: happy\'></span> under maintenance !'})"> Button</button>
             </form>
           </div>
         </section>
@@ -62,17 +59,18 @@
           <p>non-ton menyediakan akses berbagai konten IT dari berbagai konten kreator di tanah air yang dapat membantu temton (teman non-ton).</p>
         </div>
       </div>
+
       <!-- === MAIN === -->
       <main>
-        <section>
-          <div class="content">
-      <!-- Temporarily script -->
-      <!-- <article class="uk-article">
-              <h1 class="uk-article-title uk-heading-small uk-heading-bullet">Kamu</h1>
-              <p class="uk-article-meta">Written by <a href="#">Super User</a> on 12 April 2012. Posted in <a href="#">Blog</a></p>
-              <p>Itu dia yang selalu mengeluah dengan keadaan yang terpuruk</p>
-            </article> -->
-          </div>
+				<section class="main">
+					<!-- ===LOADING=== -->
+					<div class="loading" id="loadingSection">
+						<span class="loading-icon">
+							<div class="lds-ripple"><div></div><div></div></div>
+						</span>
+					</div>
+					<!-- ===CONTENTS=== -->
+          <div class="content"></div>
         </section>
       </main>
       <footer>
@@ -93,7 +91,7 @@
     </div>
 
     <!--JavaScript Eksternal-->
-    <script type="text/javascript" src="./assets/script.js"></script>
+    <script type="text/javascript" src="./script.js"></script>
 
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/js/uikit.min.js"></script>

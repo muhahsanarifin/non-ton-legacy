@@ -1,26 +1,19 @@
-const BASE_API_URL = `https://api.pulo.dev/v1/contents`;
-
-// const heading = document.querySelector("h1#heading");
-
-// const metaArticle = document.querySelector("p#metaArticle");
-
-// const pragraph = document.getElementById("pragraph");
-
-const article = document.querySelector(".content");
+const article = document.querySelector(".content"),
+			loader = document.getElementById("loadingSection");
 
 // Init API using fetch()
-fetch(BASE_API_URL)
+fetch("https://api.pulo.dev/v1/contents")
   .then((res) => {
     if (res.status === 200) {
-      return res.json();
+			hideLoader();
+			return res.json();
     } else {
       console.log(`HTTP error status: ${res.status}`);
     }
   })
   .then((cont) => {
-    // console.log(cont);
 
-    let data = '';
+    let data = "";
 
     for (let index of cont.data) {
       data += `
@@ -33,5 +26,8 @@ fetch(BASE_API_URL)
     }
 
     article.innerHTML = data;
-
   });
+
+	function hideLoader() {
+		loader.style.display = "none";
+	}

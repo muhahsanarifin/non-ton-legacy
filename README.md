@@ -1,4 +1,4 @@
-## non-ton
+<h2 align="center"> non-ton </h2>
 
 ![Alt text](./assets/images/non-ton-background.png?raw=true)
 

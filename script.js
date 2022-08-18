@@ -16,13 +16,12 @@ fetch("https://api.pulo.dev/v1/contents")
     let data = "";
 
     for (let index of cont.data) {
-      data += `
-      <article class="uk-article article" id="article">
+      data += 
+			`<article class="uk-article article" id="article">
         <h1 class="uk-artilce-title uk-heading-small heading" id="heading" style="font-family:'Poppins'">${index.title}</h1>
         <p class="uk-article-meta" id="metaArticle">${index.contributor}</p>
         <p class="pragraph"><a href="${index.url}" target="_blank">Watch it</a></p>   
-      </article>
-      `;
+      </article>`;
     }
 
     article.innerHTML = data;

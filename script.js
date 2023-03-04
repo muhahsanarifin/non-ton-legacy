@@ -5,8 +5,11 @@ const article = document.querySelector(".content"),
 fetch("https://api.pulo.dev/v1/contents")
   .then((res) => {
     if (res.status === 200) {
+
       hideLoader();
+
       return res.json();
+      
     } else {
       console.log(`HTTP error status: ${res.status}`);
     }
@@ -27,6 +30,6 @@ fetch("https://api.pulo.dev/v1/contents")
     article.innerHTML = data;
   });
 
-function hideLoader() {
+const hideLoader = () => {
   loader.style.display = "none";
 }

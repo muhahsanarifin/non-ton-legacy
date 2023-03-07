@@ -134,15 +134,23 @@ const Home = () => {
                       key={content.id}
                     >
                       <h3 className="font-extrabold">{content.title}</h3>
-                      <article className="text-xs">
+                      <div className="text-xs">
                         <p>{content.body}</p>
-                        <p>{content.url}</p>
-                      </article>
+                        <p
+                          className="link link-primary font-semibold"
+                          onClick={() => {
+                            window.open(content.url, "_blank");
+                          }}
+                        >
+                          visit
+                        </p>
+                      </div>
                       <div className="text-cyan-dark text-xs font-semibold">
                         <p>Contributor: {content.contributor}</p>
                         <span className="flex gap-x-2">
                           <p>
-                            Published: {handleDateTime(content.original_published_at)}
+                            Published:{" "}
+                            {handleDateTime(content.original_published_at)}
                           </p>
                           <p>Created: {handleDateTime(content.created_at)}</p>
                           <p>Updated: {handleDateTime(content.updated_at)}</p>

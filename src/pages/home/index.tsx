@@ -10,6 +10,7 @@ import { Header } from "@/components/Header";
 import { Loader } from "@/components/Loader";
 import { Search } from "@/components/Form";
 import { Pagination } from "@/components/Pagination";
+import { ResetButton } from "@/components/Button";
 
 const Home = () => {
   const [contents, setContents] = useState<contentProps>([]);
@@ -56,15 +57,17 @@ const Home = () => {
     router.push(`home?${queryString}`);
   }, [queryString]);
 
-  // const totalPages = (data: number, total: number) => {
-  //   return Math.ceil(total / data - 1);
-  // };
+  // Total pages
+  const totalPages = (data: number, total: number) => {
+    return Math.ceil(total / data - 1);
+  };
 
   // console.log(
   //   "Sample Total Pages: ",
   //   totalPages(contents.data?.length, contents?.total)
   // );
 
+  // Handle datetime
   const handleDateTime = (date: any) => {
     return DateTime.fromISO(date).toFormat("ff");
   };
@@ -118,7 +121,14 @@ const Home = () => {
                   </li>
                 </ul>
                 <div className="absolute bottom-24">
-                  <Pagination />
+                  <Pagination
+                    onSetPages={setPage}
+                    onPage={page}
+                    onTotalPages={totalPages(
+                      contents.data?.length,
+                      contents?.total
+                    )}
+                  />
                 </div>
               </div>
             </div>
@@ -129,6 +139,12 @@ const Home = () => {
               <Search onSetQuery={setQuery} />
             </div>
             <div className="rounded-md shadow min-h-screen">
+              {media || query || page ? (
+                <div className="flex justify-end px-4">
+                  <ResetButton />
+                </div>
+              ) : null}
+
               <ul className=" p-4 flex flex-col gap-y-2">
                 {loading ? (
                   <Loader />

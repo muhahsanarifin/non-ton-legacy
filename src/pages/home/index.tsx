@@ -139,7 +139,7 @@ const Home = () => {
               <Search onSetQuery={setQuery} />
             </div>
             <div className="rounded-md shadow min-h-screen">
-              {media || query || page ? (
+              {media || query || page > 1 ? (
                 <div className="flex justify-end px-4">
                   <ResetButton />
                 </div>

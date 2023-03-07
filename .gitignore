@@ -34,3 +34,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# components
+src/components/Button.tsx
+src/components/Footer.tsx
+src/utils/api/http.ts
+
+# env
+.env
+
+# api
+src/pages/api

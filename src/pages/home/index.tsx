@@ -6,7 +6,7 @@ import { DateTime } from "luxon";
 
 import { Title } from "@/components/Title";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+// import { Footer } from "@/components/Footer";
 import { Search } from "@/components/Form";
 import { Pagination } from "@/components/Pagination";
 

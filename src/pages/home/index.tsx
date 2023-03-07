@@ -7,6 +7,7 @@ import { DateTime } from "luxon";
 import { Title } from "@/components/Title";
 import { Header } from "@/components/Header";
 // import { Footer } from "@/components/Footer";
+import { Loader } from "@/components/Loader";
 import { Search } from "@/components/Form";
 import { Pagination } from "@/components/Pagination";
 
@@ -22,14 +23,14 @@ const Home = () => {
       ? `page=${page}&query=${query}`
       : `page=${page}`
   );
-
   const router = useRouter();
+  const [loading, setLoading] = useState<boolean>(false);
 
-// Updated new state
+  // Updated new state
   useEffect(() => {
     setQueryString(
       media
-        ? `page=${page}&media=${media}`
+        ? `page=${page}&media=${media}&query=${query}`
         : query
         ? `page=${page}&query=${query}`
         : `page=${page}`
@@ -39,10 +40,13 @@ const Home = () => {
   useEffect(() => {
     const retrieveContents = async () => {
       try {
+        setLoading(true);
         const response = await getContents(queryString);
         setContents(response?.data);
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoading(false);
       }
     };
     retrieveContents();
@@ -82,7 +86,6 @@ const Home = () => {
                       setMedia("web");
                       setPage(1);
                     }}
-                    // onClick={sample}
                   >
                     Web
                   </li>
@@ -123,42 +126,46 @@ const Home = () => {
 
           <section className=" p-4 flex-1 flex flex-col gap-y-4">
             <div>
-              <Search />
+              <Search onSetQuery={setQuery} />
             </div>
             <div className="rounded-md shadow min-h-screen">
               <ul className=" p-4 flex flex-col gap-y-2">
-                {contents?.data?.map((content: any) => (
-                  <>
-                    <li
-                      className="text-cyan-dark shadow p-2 flex flex-col gap-y-2 rounded-md"
-                      key={content.id}
-                    >
-                      <h3 className="font-extrabold">{content.title}</h3>
-                      <div className="text-xs">
-                        <p>{content.body}</p>
-                        <p
-                          className="link link-primary font-semibold"
-                          onClick={() => {
-                            window.open(content.url, "_blank");
-                          }}
-                        >
-                          visit
-                        </p>
-                      </div>
-                      <div className="text-cyan-dark text-xs font-semibold">
-                        <p>Contributor: {content.contributor}</p>
-                        <span className="flex gap-x-2">
-                          <p>
-                            Published:{" "}
-                            {handleDateTime(content.original_published_at)}
+                {loading ? (
+                  <Loader />
+                ) : (
+                  contents?.data?.map((content: any) => (
+                    <>
+                      <li
+                        className="text-cyan-dark shadow p-2 flex flex-col gap-y-2 rounded-md"
+                        key={content.id}
+                      >
+                        <h3 className="font-extrabold">{content.title}</h3>
+                        <div className="text-xs">
+                          <p className="text-justify">{content.body}</p>
+                          <p
+                            className="link link-primary font-semibold"
+                            onClick={() => {
+                              window.open(content.url, "_blank");
+                            }}
+                          >
+                            visit
                           </p>
-                          <p>Created: {handleDateTime(content.created_at)}</p>
-                          <p>Updated: {handleDateTime(content.updated_at)}</p>
-                        </span>
-                      </div>
-                    </li>
-                  </>
-                ))}
+                        </div>
+                        <div className="text-cyan-dark text-xs font-semibold">
+                          <p>Contributor: {content.contributor}</p>
+                          <span className="flex gap-x-2">
+                            <p>
+                              Published:{" "}
+                              {handleDateTime(content.original_published_at)}
+                            </p>
+                            <p>Created: {handleDateTime(content.created_at)}</p>
+                            <p>Updated: {handleDateTime(content.updated_at)}</p>
+                          </span>
+                        </div>
+                      </li>
+                    </>
+                  ))
+                )}
               </ul>
             </div>
           </section>

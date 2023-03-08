@@ -31,7 +31,7 @@ export const Pagination: React.FC<paginationProps> = ({
           <button
             className="btn btn-outline text-cyan-dark border-gray-very-light btn-sm xs:btn-xs xs:bt-outline-none xs:bg-cyan-blue xs:text-white"
             onClick={handleNext}
-            disabled={onPage === onTotalPages}
+            disabled={onPage === onTotalPages || onTotalPages === 0}
           >
             »
           </button>

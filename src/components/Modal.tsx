@@ -17,7 +17,7 @@ export const Modal: React.FC<ModalProps> = ({onIdModal}) => {
           <p className="py-4 text-white">
             Deliver Tech/Programming enthusiast to get useful contents easily.
           </p>
-          <p className="text-xs">2022-2023 © non-ton</p>
+          <p className="text-xs font-bold">2022-2023 © non-ton</p>
         </div>
       </div>
     </>

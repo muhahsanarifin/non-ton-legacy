@@ -19,17 +19,17 @@ export const Pagination: React.FC<paginationProps> = ({
       <div className="flex justify-end p-4">
         <div className="btn-group">
           <button
-            className="btn btn-outline text-cyan-dark border-gray-very-light btn-sm"
+            className="btn btn-outline text-cyan-dark border-gray-very-light btn-sm xs:btn-xs xs:bt-outline-none xs:bg-cyan-blue xs:text-white"
             onClick={hanlePrevious}
             disabled={onPage === 1}
           >
             «
           </button>
-          <button className="btn btn-outline text-xs text-cyan-dark border-gray-very-light btn-sm">
+          <button className="btn btn-outline text-xs text-cyan-dark border-gray-very-light btn-sm xs:btn-xs xs:bt-outline-none xs:bg-cyan-blue xs:text-white">
             {`Page ${onPage}`}
           </button>
           <button
-            className="btn btn-outline text-cyan-dark border-gray-very-light btn-sm"
+            className="btn btn-outline text-cyan-dark border-gray-very-light btn-sm xs:btn-xs xs:bt-outline-none xs:bg-cyan-blue xs:text-white"
             onClick={handleNext}
             disabled={onPage === onTotalPages}
           >

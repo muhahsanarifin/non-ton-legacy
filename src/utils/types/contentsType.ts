@@ -4,6 +4,7 @@ export type contentProps = {
 
 export type formProps = {
   onSetQuery: any;
+  onSetPages: any;
 };
 
 export type paginationProps = {
@@ -13,5 +14,5 @@ export type paginationProps = {
 };
 
 export type ModalProps = {
-  onIdModal: string,
-}
+  onIdModal: string;
+};

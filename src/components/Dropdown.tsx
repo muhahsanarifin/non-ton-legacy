@@ -20,9 +20,20 @@ export const Dropdown = () => {
           className="dropdown-content menu p-2 shadow bg-white rounded-box w-36 text-cyan-dark"
         >
           <li className="text-xs">
-            <a>About</a>
+            {/* The button to open modal */}
+            <label htmlFor="about-modal">
+              <a>About</a>
+            </label>
           </li>
-          <li className="text-xs">
+          <li
+            className="text-xs"
+            onClick={() => {
+              window.open(
+                "https://www.linkedin.com/in/muhahsan",
+                "_blank"
+              );
+            }}
+          >
             <a>Develoved by</a>
           </li>
         </ul>

@@ -11,3 +11,7 @@ export type paginationProps = {
   onSetPages: any;
   onPage: number;
 };
+
+export type ModalProps = {
+  onIdModal: string,
+}

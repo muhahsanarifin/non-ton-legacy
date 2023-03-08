@@ -14,7 +14,7 @@
     <a href="#"><strong>Explore the docs »</strong></a>
     <br />
     <br /> -->
-    <a href="https://doi.vercel.app/auth/login">View Demo</a>
+    <a href="https://non-ton-muhahsanarifin.vercel.app/">View Demo</a>
     ·
     <a href="#">Report Bug</a>
     ·

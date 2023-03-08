@@ -3,7 +3,7 @@ import UpArrowIcon from "../assets/icon/up-arrow.svg";
 import Image from "next/image";
 
 export const Footer = () => {
-  const [activeUpButton, setSampleActiveUpButton] = useState(false);
+  const [activeUpButton, setActiveUpButton] = useState(false);
 
   const handleUP = () => {
     window.scroll({
@@ -14,7 +14,7 @@ export const Footer = () => {
 
   useEffect(() => {
     window.onscroll = () => {
-      window.scrollY > 0 ? setSampleActiveUpButton(true) : setSampleActiveUpButton(false);
+      window.scrollY > 0 ? setActiveUpButton(true) : setActiveUpButton(false);
     };
   }, []);
 

@@ -18,6 +18,7 @@ module.exports = {
       "cyan-dark": "#2c3333",
       "gray-very-light": "#ececec",
       "cyan-blue-medium-ligth": "#f0f1f3",
+      "cyan-blue": "#2a303c",
     },
     screens: {
       "3xl": { min: "1536px" },

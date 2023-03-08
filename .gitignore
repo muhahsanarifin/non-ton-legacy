@@ -36,9 +36,8 @@ yarn-error.log*
 next-env.d.ts
 
 # components
-src/components/Button.tsx
-src/components/Footer.tsx
 src/utils/api/http.ts
+src/components/SideBar.tsx
 
 # env
 .env

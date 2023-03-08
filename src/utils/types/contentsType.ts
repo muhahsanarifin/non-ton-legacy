@@ -1,3 +1,5 @@
+import { Skeleton } from "@/components/Loader";
+
 export type contentProps = {
   [key: string]: any;
 };
@@ -11,8 +13,9 @@ export type paginationProps = {
   onTotalPages: number;
   onSetPages: any;
   onPage: number;
+  onContentPegs: number;
 };
 
-export type ModalProps = {
+export type modalProps = {
   onIdModal: string;
 };

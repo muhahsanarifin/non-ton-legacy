@@ -8,6 +8,7 @@ export const Footer: React.FC<paginationProps> = ({
   onTotalPages,
   onSetPages,
   onPage,
+  onContentPegs,
 }) => {
   const [activeUpButton, setActiveUpButton] = useState(false);
 
@@ -31,11 +32,14 @@ export const Footer: React.FC<paginationProps> = ({
           {/* <div className="bg-white p-4 border-solid border-2 border-gray-very-light text-cyan-dark">
             <p>2022-2023 © non-ton</p>
           </div> */}
-          <Pagination
-            onSetPages={onSetPages}
-            onPage={onPage}
-            onTotalPages={onTotalPages}
-          />
+          {onContentPegs !== 0 ? (
+            <Pagination
+              onSetPages={onSetPages}
+              onPage={onPage}
+              onTotalPages={onTotalPages}
+              onContentPegs={onContentPegs}
+            />
+          ) : null}
 
           {activeUpButton ? (
             <button

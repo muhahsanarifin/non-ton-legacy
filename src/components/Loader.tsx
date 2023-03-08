@@ -13,7 +13,7 @@ export const Loader = () => {
           min-height: 50vh;
           display: flex;
           justify-content: center;
-          align-items: center
+          align-items: center;
         }
         .lds-facebook {
           display: inline-block;
@@ -53,6 +53,24 @@ export const Loader = () => {
           }
         }
       `}</style>
+    </>
+  );
+};
+
+export const Skeleton = () => {
+  return (
+    <>
+      <li className=" bg-white shadow p-2 flex flex-col gap-y-2 rounded-md xs:w-full animate-pulse h-28">
+        <div className="bg-cyan-blue-light rounded h-6 w-1/4 xs:w-9/12 xs:h-14"></div>
+        <div className="flex flex-col gap-y-1">
+          <div className="bg-cyan-blue-light rounded h-9 w-6/12 xs:hidden"></div>
+          <div className="bg-cyan-blue-light rounded h-2 w-8"></div>
+        </div>
+        <div className="flex flex-col gap-y-1">
+          <div className="bg-cyan-blue-light rounded h-2 w-1/5"></div>
+          <div className="bg-cyan-blue-light rounded h-2 w-1/5"></div>
+        </div>
+      </li>
     </>
   );
 };

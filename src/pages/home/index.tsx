@@ -118,6 +118,7 @@ const Home = () => {
                           setMedia(mediaArrOfObj.media);
                           setPage(mediaArrOfObj.page);
                         }}
+                        key={mediaArrOfObj?.id}
                       >
                         {mediaArrOfObj.media}
                       </li>
@@ -140,7 +141,7 @@ const Home = () => {
 
           <section className=" p-4 flex-1 flex flex-col gap-y-4 xs:w-full">
             <div>
-              <Search onSetQuery={setQuery} />
+              <Search onSetQuery={setQuery} onSetPages={setPage} />
             </div>
             <div className="rounded-md shadow min-h-screen ">
               {media || query || page > 1 ? (
@@ -157,11 +158,15 @@ const Home = () => {
                     <>
                       <li
                         className="text-cyan-dark shadow p-2 flex flex-col gap-y-2 rounded-md xs:w-full"
-                        key={content.id}
+                        key={content?.id}
                       >
-                        <h3 className="font-extrabold">{content.title}</h3>
+                        <h3 className="font-extrabold xs: text-base">
+                          {content.title}
+                        </h3>
                         <div className="text-xs">
-                          <p className="text-justify">{content.body}</p>
+                          <p className="text-justify xs:hidden">
+                            {content.body}
+                          </p>
                           <p
                             className="link link-primary font-semibold"
                             onClick={() => {

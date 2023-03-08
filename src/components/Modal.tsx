@@ -6,7 +6,7 @@ export const Modal: React.FC<ModalProps> = ({onIdModal}) => {
     <>
       <input type="checkbox" id={onIdModal} className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box relative">
+        <div className="modal-box relative bg-cyan-blue">
           <label
             htmlFor={onIdModal}
             className="btn btn-sm btn-circle absolute right-2 top-2"

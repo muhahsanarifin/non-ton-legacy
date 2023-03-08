@@ -26,7 +26,7 @@ export const Pagination: React.FC<paginationProps> = ({
             «
           </button>
           <button className="btn btn-outline text-xs text-cyan-dark border-gray-very-light btn-sm">
-            Page 1
+            {`Page ${onPage}`}
           </button>
           <button
             className="btn btn-outline text-cyan-dark border-gray-very-light btn-sm"

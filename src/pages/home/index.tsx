@@ -7,11 +7,12 @@ import { DateTime } from "luxon";
 import { Title } from "@/components/Title";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Loader } from "@/components/Loader";
 import { Search } from "@/components/Form";
 import { Pagination } from "@/components/Pagination";
 import { ResetButton } from "@/components/Button";
 import { Modal } from "@/components/Modal";
+import { Skeleton } from "@/components/Loader";
+import { Info } from "@/components/Info";
 
 const Home = () => {
   const [contents, setContents] = useState<contentProps>([]);
@@ -125,16 +126,19 @@ const Home = () => {
                     </>
                   ))}
                 </ul>
-                <div className="absolute bottom-24">
-                  <Pagination
-                    onSetPages={setPage}
-                    onPage={page}
-                    onTotalPages={totalPages(
-                      contents.data?.length,
-                      contents?.total
-                    )}
-                  />
-                </div>
+                {contents?.total !== 0 ? (
+                  <div className="absolute bottom-24">
+                    <Pagination
+                      onSetPages={setPage}
+                      onPage={page}
+                      onTotalPages={totalPages(
+                        contents.data?.length,
+                        contents?.total
+                      )}
+                      onContentPegs={contents?.total}
+                    />
+                  </div>
+                ) : null}
               </div>
             </aside>
           </section>
@@ -152,8 +156,8 @@ const Home = () => {
 
               <ul className=" p-4 flex flex-col gap-y-2">
                 {loading ? (
-                  <Loader />
-                ) : (
+                  new Array(6).fill(0).map((_, idx) => <Skeleton key={idx} />)
+                ) : contents?.total !== 0 ? (
                   contents?.data?.map((content: any) => (
                     <>
                       <li
@@ -180,7 +184,7 @@ const Home = () => {
                           <p>Contributor: {content.contributor}</p>
                           <span className="flex gap-x-2">
                             <p>
-                              Published:{" "}
+                              Published:
                               {handleDateTime(content.original_published_at)}
                             </p>
                             <p>Created: {handleDateTime(content.created_at)}</p>
@@ -190,6 +194,8 @@ const Home = () => {
                       </li>
                     </>
                   ))
+                ) : (
+                  <Info />
                 )}
               </ul>
             </div>
@@ -199,6 +205,7 @@ const Home = () => {
           onSetPages={setPage}
           onPage={page}
           onTotalPages={totalPages(contents.data?.length, contents?.total)}
+          onContentPegs={contents?.total}
         />
       </div>
     </>

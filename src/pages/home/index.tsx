@@ -156,7 +156,7 @@ const Home = () => {
                   contents?.data?.map((content: any) => (
                     <>
                       <li
-                        className="text-cyan-dark shadow p-2 flex flex-col gap-y-2 rounded-md"
+                        className="text-cyan-dark shadow p-2 flex flex-col gap-y-2 rounded-md xs:w-full"
                         key={content.id}
                       >
                         <h3 className="font-extrabold">{content.title}</h3>
@@ -190,7 +190,11 @@ const Home = () => {
             </div>
           </section>
         </main>
-        <Footer />
+        <Footer
+          onSetPages={setPage}
+          onPage={page}
+          onTotalPages={totalPages(contents.data?.length, contents?.total)}
+        />
       </div>
     </>
   );

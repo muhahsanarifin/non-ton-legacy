@@ -19,6 +19,7 @@ const Home = () => {
   const [page, setPage] = useState<number>(1);
   const [media, setMedia] = useState<string>("");
   const [query, setQuery] = useState<string>("");
+  const [focus, setFocus] = useState<number>();
   const [queryString, setQueryString] = useState<string>(
     media
       ? `page=${page}&media=${media}`
@@ -97,8 +98,6 @@ const Home = () => {
     },
   ];
 
-  // console.log("Result:", mediaArrOfObjs);
-
   return (
     <>
       <Title name="Home" />
@@ -114,10 +113,15 @@ const Home = () => {
                   {mediaArrOfObjs?.map((mediaArrOfObj) => (
                     <>
                       <li
-                        className="text-sm cursor-pointer my-1 hover:bg-cyan-blue-medium-ligth p-2 rounded-full capitalize font-semibold"
+                        className={
+                          focus !== mediaArrOfObj?.id
+                            ? "text-sm cursor-pointer my-1 hover:bg-cyan-blue-medium-ligth p-2 rounded-full capitalize font-semibold"
+                            : "text-sm cursor-pointer my-1 bg-cyan-blue-medium-ligth ring-2 ring-cyan-blue-light p-2 rounded-full capitalize font-semibold"
+                        }
                         onClick={() => {
                           setMedia(mediaArrOfObj.media);
                           setPage(mediaArrOfObj.page);
+                          setFocus(mediaArrOfObj.id);
                         }}
                         key={mediaArrOfObj?.id}
                       >

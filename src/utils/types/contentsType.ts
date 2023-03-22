@@ -1,5 +1,3 @@
-import { Skeleton } from "@/components/Loader";
-
 export type contentProps = {
   [key: string]: any;
 };

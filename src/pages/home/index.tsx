@@ -47,8 +47,8 @@ const Home = () => {
         setLoading(true);
         const response = await getContents(queryString);
         setContents(response?.data);
-      } catch (error) {
-        console.log(error);
+      } catch (error: any) {
+        console.log(error?.message);
       } finally {
         setLoading(false);
       }

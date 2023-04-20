@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import { DateTime } from "luxon";
-import type { RootState } from "@/redux/store";
+import type { RootState, AppDispatch } from "@/redux/store";
 import { contentsAction } from "@/redux/reducers/content";
 
 import { Title } from "@/components/Title";
@@ -16,7 +16,8 @@ import { Skeleton } from "@/components/Loader";
 import { Info } from "@/components/Info";
 
 const Home = () => {
-  const dispatch = useDispatch<any>();
+  const useAppDispatch: () => AppDispatch = useDispatch;
+  const dispatch = useAppDispatch()
   const contents = useSelector(
     (state: RootState) => state.contents.retriveContents
   );

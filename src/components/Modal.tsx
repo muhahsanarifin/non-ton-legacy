@@ -5,7 +5,7 @@ export const Modal: React.FC<modalProps> = ({onIdModal}) => {
   return (
     <>
       <input type="checkbox" id={onIdModal} className="modal-toggle" />
-      <div className="modal">
+      <label htmlFor={onIdModal} className="modal cursor-pointer">
         <div className="modal-box relative bg-cyan-blue">
           <label
             htmlFor={onIdModal}
@@ -19,7 +19,7 @@ export const Modal: React.FC<modalProps> = ({onIdModal}) => {
           </p>
           <p className="text-xs font-bold">2022-2023 © non-ton</p>
         </div>
-      </div>
+      </label>
     </>
   );
 }

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { contentProps } from "@/utils/types/contentsType";
-import { getContents } from "../../utils/api/content";
+import { useSelector, useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import { DateTime } from "luxon";
+import type { RootState } from "@/redux/store";
+import { contentsAction } from "@/redux/reducers/content";
 
 import { Title } from "@/components/Title";
 import { Header } from "@/components/Header";
@@ -15,7 +16,12 @@ import { Skeleton } from "@/components/Loader";
 import { Info } from "@/components/Info";
 
 const Home = () => {
-  const [contents, setContents] = useState<contentProps>([]);
+  const dispatch = useDispatch<any>();
+  const contents = useSelector(
+    (state: RootState) => state.contents.retriveContents
+  );
+
+  const loading = useSelector((state: RootState) => state.contents?.isLoading);
   const [page, setPage] = useState<number>(1);
   const [media, setMedia] = useState<string>("");
   const [query, setQuery] = useState<string>("");
@@ -28,7 +34,6 @@ const Home = () => {
       : `page=${page}`
   );
   const router = useRouter();
-  const [loading, setLoading] = useState<boolean>(false);
 
   // Updated new state
   useEffect(() => {
@@ -42,19 +47,8 @@ const Home = () => {
   }, [media, page, query]);
 
   useEffect(() => {
-    const retrieveContents = async () => {
-      try {
-        setLoading(true);
-        const response = await getContents(queryString);
-        setContents(response?.data);
-      } catch (error: any) {
-        console.log(error?.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-    retrieveContents();
-  }, [queryString]);
+    dispatch(contentsAction.retriveContentsThunk(queryString));
+  }, [queryString, dispatch]);
 
   useEffect(() => {
     router.push(`home?${queryString}`);
@@ -123,7 +117,7 @@ const Home = () => {
                           setPage(mediaArrOfObj.page);
                           setFocus(mediaArrOfObj.id);
                         }}
-                        key={mediaArrOfObj?.id}
+                        key={mediaArrOfObj.id}
                       >
                         {mediaArrOfObj.media}
                       </li>
@@ -166,7 +160,7 @@ const Home = () => {
                     <>
                       <li
                         className="text-cyan-dark shadow p-2 flex flex-col gap-y-2 rounded-md xs:w-full"
-                        key={content?.id}
+                        key={content.id}
                       >
                         <h3 className="font-extrabold xs: text-base">
                           {content.title}
@@ -187,12 +181,16 @@ const Home = () => {
                         <div className="text-cyan-dark text-xs font-semibold">
                           <p>Contributor: {content.contributor}</p>
                           <span className="flex gap-x-2">
-                            <p>
-                              Published:
+                            <p className="font-bold">
+                              Published:{" "}
                               {handleDateTime(content.original_published_at)}
                             </p>
-                            <p>Created: {handleDateTime(content.created_at)}</p>
-                            <p>Updated: {handleDateTime(content.updated_at)}</p>
+                            <p className="font-bold">
+                              Created: {handleDateTime(content.created_at)}
+                            </p>
+                            <p className="font-bold">
+                              Updated: {handleDateTime(content.updated_at)}
+                            </p>
                           </span>
                         </div>
                       </li>
